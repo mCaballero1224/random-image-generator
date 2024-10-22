@@ -15,6 +15,11 @@ body {
 
 h1 { text-align: center }
 
+#credit {
+	font-size: 0.8em;
+	text-align: center;
+}
+
 #image-container {
 	margin: 0 2%;
 	display: flex;
@@ -42,6 +47,16 @@ button {
 	border-style: none;
 	background-color: #00AAFF;
 	color: #FFF;
+}
+
+button:hover {
+	color: #00AAFF;
+	background-color: #FFF;
+}
+
+button:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
 
 footer {
