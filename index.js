@@ -29,7 +29,7 @@ app.get("/generate-image", function (req, res) {
 	let response_object = {"path": "https://placehold.co/1280x720"};
 	console.log(response_object);
 	/* send the file path as a JSON object */
-	res.json(resopnse_object);
+	res.json(response_object);
 });
 
 app.listen(PORT, function() {
