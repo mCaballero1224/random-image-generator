@@ -8,6 +8,7 @@ const image = document.getElementById('random-image');
 
 // Function to handle button click
 async function handleButton() {
+	button.disabled = true; /* Disable the button while the services run */
 	// Define API endpoint
 	const url = "http://localhost:3000/generate-image";
 	try {
@@ -19,15 +20,16 @@ async function handleButton() {
 		}
 
 		// Get the response as a JSON object
-		const json = await response.json();
-		console.log(json);
+		let data = await response.json();
+		console.log(data);
+		image.src = data.path;
 
 		// Set display image to that provided by the path
-		image.src = json.path;
 	// Catch any errors
 	} catch (error) {
 		console.error(error.message);
 	}
+	button.disabled = false; /* Enable the button when services are finished */
 }
 
 // Add event listener to the button for the handleButton function
